@@ -220,11 +220,11 @@
 
 %% Commands related to sample data
 
-\newcommand{\sampleinputname}{Sample Input}
-\newcommand{\sampleoutputname}{Sample Output}
-\newcommand{\sampleinteractname}{Sample Interaction}
-\newcommand{\sampleinteractreadname}{Read}
-\newcommand{\sampleinteractwritename}{Write}
+\newcommand{\sampleinputname}{Sýnis Inntak}
+\newcommand{\sampleoutputname}{Sýnis Úttak}
+\newcommand{\sampleinteractname}{Sýnis Tjáskipti}
+\newcommand{\sampleinteractreadname}{Les}
+\newcommand{\sampleinteractwritename}{Skrifar}
 
 \newcommand{\formatsampleheader}[1]{\textsf{\textbf{#1}}}
 
