@@ -3,9 +3,10 @@
 ## Modifications: 
 
 Currently:
+* "Sample Input", "Sample Output" and "Sample Interaction" translated in problem2pdf
 
 Planned:
-* "Sample Input" and "Sample Output" translated in problem2pdf template
+* translate the rest of problem2pdf and problem2html
 
 ## Programs Provided
 
