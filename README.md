@@ -6,14 +6,17 @@ Currently:
 * "Sample Input", "Sample Output" and "Sample Interaction" translated in problem2pdf
 
 Planned:
-* translate the rest of problem2pdf and problem2html
-
+* add language file compatibility for all generated text by problem2pdf and problem2html 
+* support for alternitive templates 
+* provide an english and icelantic langueage file
 ## Programs Provided
 
 The problem tools provide the following three programs:
 
  - `verifyproblem`: run a complete check on a problem
  - `problem2pdf`: convert a problem statement to pdf
+   
+Currently does not support the new functionality in problem2pdf :
  - `problem2html`: convert a problem statement to html
 
 Running any of them with the command-line option `-h` gives
