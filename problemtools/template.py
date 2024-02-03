@@ -71,7 +71,9 @@ class Template:
             templatedirectory = os.path.dirname(template)
             if os.path.isdir(templatedirectory) and os.path.isfile(template):
                 self.templatepath = template
-
+            
+        self.clsfile = 'problemset.cls'
+        self.clsfile = 'problemset_%s.cls' % version
 
         self.basedir = os.path.dirname(problemdir)
         self.shortname = os.path.basename(problemdir)

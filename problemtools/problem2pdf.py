@@ -52,7 +52,7 @@ def parse_args(args: list[str]|None) -> argparse.Namespace:
     parser.add_argument('-o', '--output', dest='destfile', help="output file name", default='${problem}.pdf')
     parser.add_argument('-q', '--quiet', dest='quiet', action='store_true', help="quiet", default=False)
     parser.add_argument('-l', '--language', dest='language', help='choose alternate language (2-letter code)', default=None)
-    parser.add_argument('-n', '--no-pdf-testlol', dest='nopdf', action='store_true', help='run pdflatex in -draftmode', default=False)
+    parser.add_argument('-n', '--no-pdf', dest='nopdf', action='store_true', help='run pdflatex in -draftmode', default=False)
     parser.add_argument('-t', '--template', dest='template', help="choose alternite template file", default=None)
     parser.add_argument('problem', help='the problem to convert')
 
