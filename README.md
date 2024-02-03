@@ -34,12 +34,12 @@ Install the Python package
 
 Run
 ```
-sudo pip3 install git+https://github.com/kattis/problemtools
+sudo pip3 install git+https://github.com/Tskoli-Kodun/problemtools-is
 ```
 
 Or if you don't want a system-wide installation,
 ```
-pip3 install --user git+https://github.com/kattis/problemtools
+pip3 install --user git+https://github.com/Tskoli-Kodun/problemtools-is
 ```
 With this second option, in order to get the command line scripts, you need
 to make sure that the local user bin path used (e.g., on Linux,
