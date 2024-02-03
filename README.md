@@ -6,14 +6,17 @@ Currently:
 * "Sample Input", "Sample Output" and "Sample Interaction" translated in problem2pdf
 
 Planned:
-* translate the rest of problem2pdf and problem2html
-
+* add language file compatibility for all generated text by problem2pdf and problem2html 
+* support for alternitive templates 
+* provide an english and icelantic langueage file
 ## Programs Provided
 
 The problem tools provide the following three programs:
 
  - `verifyproblem`: run a complete check on a problem
  - `problem2pdf`: convert a problem statement to pdf
+   
+Currently does not support the new functionality in problem2pdf :
  - `problem2html`: convert a problem statement to html
 
 Running any of them with the command-line option `-h` gives
@@ -34,12 +37,12 @@ Install the Python package
 
 Run
 ```
-sudo pip3 install git+https://github.com/kattis/problemtools
+sudo pip3 install git+https://github.com/Tskoli-Kodun/problemtools-is
 ```
 
 Or if you don't want a system-wide installation,
 ```
-pip3 install --user git+https://github.com/kattis/problemtools
+pip3 install --user git+https://github.com/Tskoli-Kodun/problemtools-is
 ```
 With this second option, in order to get the command line scripts, you need
 to make sure that the local user bin path used (e.g., on Linux,
