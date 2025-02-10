@@ -14,7 +14,7 @@ def detect_version(problemdir, problemtex):
 
 
 class Template:
-    def __init__(self, problemdir, language=None, force_copy_cls=False):
+    def __init__(self, problemdir, template=None, language=None, force_copy_cls=False):
         if not os.path.isdir(problemdir):
             raise Exception('%s is not a directory' % problemdir)
 
@@ -49,23 +49,31 @@ class Template:
         if not os.path.isfile(problemtex):
             raise Exception('Unable to find problem statement, was looking for "%s"' % problemtex)
 
-        self.templatefile = 'template.tex'
-        self.clsfile = 'problemset.cls'
-        timelim = 1  # Legacy for compatibility with v0.1
-        version = detect_version(problemdir, problemtex)
-        if version != '':
-            print('Note: problem is in an old version (%s) of problem format, you should consider updating it' % version)
-            self.templatefile = 'template_%s.tex' % version
-            self.clsfile = 'problemset_%s.cls' % version
+        if template is None:
+            self.templatefile = 'template.tex'
+            self.clsfile = 'problemset.cls'
+            timelim = 1  # Legacy for compatibility with v0.1
+            version = detect_version(problemdir, problemtex)
+            if version != '':
+                print('Note: problem is in an old version (%s) of problem format, you should consider updating it' % version)
+                self.templatefile = 'template_%s.tex' % version
+                self.clsfile = 'problemset_%s.cls' % version
 
-        templatepaths = [os.path.join(os.path.dirname(__file__), 'templates/latex'),
-                         os.path.join(os.path.dirname(__file__), '../templates/latex'),
-                         '/usr/lib/problemtools/templates/latex']
-        self.templatepath = next((p for p in templatepaths
-                                  if os.path.isdir(p) and os.path.isfile(os.path.join(p, self.templatefile))),
-                                 None)
-        if self.templatepath is None:
-            raise Exception('Could not find directory with latex template "%s"' % self.templatefile)
+            templatepaths = [os.path.join(os.path.dirname(__file__), 'templates/latex'),
+                            os.path.join(os.path.dirname(__file__), '../templates/latex'),
+                            '/usr/lib/problemtools/templates/latex']
+            self.templatepath = next((p for p in templatepaths
+                                    if os.path.isdir(p) and os.path.isfile(os.path.join(p, self.templatefile))),
+                                    None)
+            if self.templatepath is None:
+                raise Exception('Could not find directory with latex template "%s"' % self.templatefile)
+        else:
+            templatedirectory = os.path.dirname(template)
+            if os.path.isdir(templatedirectory) and os.path.isfile(template):
+                self.templatepath = template
+            
+        self.clsfile = 'problemset.cls'
+        self.clsfile = 'problemset_%s.cls' % version
 
         self.basedir = os.path.dirname(problemdir)
         self.shortname = os.path.basename(problemdir)

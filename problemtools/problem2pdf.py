@@ -17,7 +17,7 @@ def convert(args: list[str]|None = None) -> bool:
 
     texfile = problem
     # Set up template if necessary
-    with template.Template(problem, language=options.language) as templ:
+    with template.Template(problem, language=options.language, template=options.template) as templ:
         texfile = templ.get_file_name()
 
         origcwd = os.getcwd()
@@ -53,6 +53,7 @@ def parse_args(args: list[str]|None) -> argparse.Namespace:
     parser.add_argument('-q', '--quiet', dest='quiet', action='store_true', help="quiet", default=False)
     parser.add_argument('-l', '--language', dest='language', help='choose alternate language (2-letter code)', default=None)
     parser.add_argument('-n', '--no-pdf', dest='nopdf', action='store_true', help='run pdflatex in -draftmode', default=False)
+    parser.add_argument('-t', '--template', dest='template', help="choose alternite template file", default=None)
     parser.add_argument('problem', help='the problem to convert')
 
     if args is not None:
