@@ -50,6 +50,7 @@
 \RequirePackage{url}              % Urls
 \RequirePackage[normalem]{ulem}   % \sout
 \RequirePackage[colorlinks=true,implicit=false]{hyperref}
+\usepackage{xcolor} % color control
 \ifplastex\else
 \RequirePackage{xstring}
 \RequirePackage{pgffor}
@@ -184,7 +185,7 @@
   \clearproblemsetpage
   \refstepcounter{problemcount}
   \setcounter{samplenum}{0}
-  \setcounter{figure}{0}%
+  \setcounter{figure}{0}
   \def\@problemid{#1}
 }
 
@@ -391,6 +392,12 @@
 \ifplastex\else
 
 \AtBeginDocument{
+
+  % added in problemtools-is ~~~
+  \setlength{\parindent}{0pt} 
+  \fussy
+  % ~~~~
+
   %% Set up headers
   \fancypagestyle{problem}{
     \fancyhf{} % Clear old junk
